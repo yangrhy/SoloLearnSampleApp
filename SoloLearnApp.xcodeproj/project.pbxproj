@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		9C2F316E21FDFC98004C1BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2F316C21FDFC98004C1BFE /* LaunchScreen.storyboard */; };
 		9C2F317921FDFC98004C1BFE /* SoloLearnAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F317821FDFC98004C1BFE /* SoloLearnAppTests.swift */; };
 		9C2F318421FDFC98004C1BFE /* SoloLearnAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F318321FDFC98004C1BFE /* SoloLearnAppUITests.swift */; };
+		9C2F319221FE631D004C1BFE /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F319121FE631D004C1BFE /* ItemTableViewCell.swift */; };
+		9C2F319421FE66C1004C1BFE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F319321FE66C1004C1BFE /* Item.swift */; };
+		9C2F319621FE6D33004C1BFE /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F319521FE6D33004C1BFE /* ItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		9C2F317F21FDFC98004C1BFE /* SoloLearnAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoloLearnAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2F318321FDFC98004C1BFE /* SoloLearnAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloLearnAppUITests.swift; sourceTree = "<group>"; };
 		9C2F318521FDFC98004C1BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C2F319121FE631D004C1BFE /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		9C2F319321FE66C1004C1BFE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9C2F319521FE6D33004C1BFE /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 		9C2F315721FDFC97004C1BFE = {
 			isa = PBXGroup;
 			children = (
+				9C2F319121FE631D004C1BFE /* ItemTableViewCell.swift */,
 				9C2F316221FDFC97004C1BFE /* SoloLearnApp */,
 				9C2F317721FDFC98004C1BFE /* SoloLearnAppTests */,
 				9C2F318221FDFC98004C1BFE /* SoloLearnAppUITests */,
@@ -100,6 +107,8 @@
 				9C2F316321FDFC97004C1BFE /* AppDelegate.swift */,
 				9C2F316521FDFC97004C1BFE /* ViewController.swift */,
 				9C2F316721FDFC97004C1BFE /* Main.storyboard */,
+				9C2F319321FE66C1004C1BFE /* Item.swift */,
+				9C2F319521FE6D33004C1BFE /* ItemTableViewController.swift */,
 				9C2F316A21FDFC98004C1BFE /* Assets.xcassets */,
 				9C2F316C21FDFC98004C1BFE /* LaunchScreen.storyboard */,
 				9C2F316F21FDFC98004C1BFE /* Info.plist */,
@@ -205,7 +214,7 @@
 				};
 			};
 			buildConfigurationList = 9C2F315B21FDFC97004C1BFE /* Build configuration list for PBXProject "SoloLearnApp" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -256,7 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2F319621FE6D33004C1BFE /* ItemTableViewController.swift in Sources */,
+				9C2F319421FE66C1004C1BFE /* Item.swift in Sources */,
 				9C2F316621FDFC97004C1BFE /* ViewController.swift in Sources */,
+				9C2F319221FE631D004C1BFE /* ItemTableViewCell.swift in Sources */,
 				9C2F316421FDFC97004C1BFE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WGD3USVHRF;
 				INFOPLIST_FILE = SoloLearnApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WGD3USVHRF;
 				INFOPLIST_FILE = SoloLearnApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
