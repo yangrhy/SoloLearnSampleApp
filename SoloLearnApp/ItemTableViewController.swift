@@ -10,16 +10,30 @@ import UIKit
 
 class ItemTableViewController: UITableViewController {
     var items = [Item]()
-    
+    /* commented out since now creating a new loadItems function, left in here in case others following tutorial need it
     func loadSampleItems() {
         items += [Item(name:"item1"), Item(name: "item2"), Item(name:"item3")]
     }
-
+    */
+    func loadItems() -> [Item]?{
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Item.ArchiveURL.path) as? [Item]
+    }
+    
+    func saveItems() {
+        let isSaved = NSKeyedArchiver.archiveRootObject(items, toFile: Item.ArchiveURL.path)
+        if !isSaved {
+            print("Failed to save items...")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadSampleItems()
+        //loadSampleItems() See comment above
         
+        // Load list of saved items
+        if let savedItems = loadItems(){
+            items += savedItems
+        }
         navigationItem.leftBarButtonItem = editButtonItem
 
         // Uncomment the following line to preserve selection between presentations
@@ -60,12 +74,14 @@ class ItemTableViewController: UITableViewController {
             if let selectedIndexPath = tableView.indexPathForSelectedRow{
                 items[selectedIndexPath.row] = item!
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            saveItems()
             }
             else {
                 // Add a new item
                 let newIndexPath = NSIndexPath(row: items.count, section: 0)
                 items.append(item!)
                 tableView.insertRows(at: [newIndexPath as IndexPath], with: .bottom)
+                saveItems()
             }
             
         }
@@ -85,6 +101,7 @@ class ItemTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             items.remove(at: indexPath.row)
+            saveItems()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
